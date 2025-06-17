@@ -1,13 +1,14 @@
-# 1. Ask the user for their name and store it in a variable
+# First, let's get the user's name as input
 user_name = input("Please enter your name: ")
 
-# 2. (Optional) You can still have a topic if you like, or remove it.
-#    Let's keep it for now for consistency with your printf idea.
-topic_string = input("What are you learning today? ")
+# Define the topic
+topic = "AI"
 
-# 3. Print a greeting that uses the name variable
-print(f"Hello, {user_name}! Have fun learning {topic_string}.")
+# Define the special name you're looking for
+special_name = "Sid" # <--- IMPORTANT: Change this to YOUR actual name!
 
-# Example of how you might have stored a fixed name before (now replaced by user input)
-# fixed_name = "Alice"
-# print(f"Hello, {fixed_name}! This is a fixed greeting.")
+# Now, we use an 'if' statement to check for the special name
+if user_name == special_name:
+    print(f"Hey, it's the awesome AI Director, {user_name}!")
+else:
+    print(f"Hello, I'm {user_name}, and I'm learning about {topic}")
