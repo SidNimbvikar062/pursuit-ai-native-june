@@ -3,10 +3,10 @@ user_name = input("Please enter your name: ")
 
 # 2. (Optional) You can still have a topic if you like, or remove it.
 #    Let's keep it for now for consistency with your printf idea.
-topic_string = input("What are you learning today?")
+topic_string = input("What are you learning today? ")
 
 # 3. Print a greeting that uses the name variable
-print(f"Hello, {user_name}! Welcome to {topic_string}.")
+print(f"Hello, {user_name}! Have fun learning {topic_string}.")
 
 # Example of how you might have stored a fixed name before (now replaced by user input)
 # fixed_name = "Alice"
