@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Welcome App</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Use Inter font family for all elements */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased; /* Better font rendering for webkit browsers */
+            -moz-osx-font-smoothing: grayscale; /* Better font rendering for firefox */
+        }
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a; /* Darker track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dc2626; /* Red thumb */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ef4444; /* Lighter red on hover */
+        }
+    </style>
+</head>
+<body class="bg-black text-white flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 overflow-auto">
+
+    <!-- Main application container -->
+    <div class="w-full max-w-2xl mx-auto bg-gray-900 rounded-xl shadow-2xl overflow-hidden border border-red-700">
+        <!-- Header Section -->
+        <div class="p-6 md:p-8 bg-gray-800 border-b border-red-800">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-red-500">
+                Welcome Message Generator
+            </h1>
+            <p class="text-gray-400 text-center mt-2 max-w-lg mx-auto">
+                Enter your details to receive a personalized welcome message based on the time of day.
+            </p>
+        </div>
+
+        <!-- Main Content: Interactive Form -->
+        <div class="p-6 md:p-8 space-y-6">
+            <h2 class="text-xl font-semibold text-red-400">Generate Your Message</h2>
+            
+            <!-- Input Fields -->
+            <div class="space-y-4">
+                <div>
+                    <label for="userName" class="block text-sm font-medium text-gray-300 mb-2">Your Name:</label>
+                    <input type="text" id="userName" class="w-full bg-gray-700 border border-red-600 rounded-lg p-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-red-500 focus:outline-none transition-all duration-200" placeholder="e.g., Alice">
+                    <p class="text-xs text-gray-400 mt-2">Hint: Try typing "Sid" for a special greeting!</p>
+                </div>
+                <div>
+                    <label for="userTopic" class="block text-sm font-medium text-gray-300 mb-2">What are you learning about?</label>
+                    <input type="text" id="userTopic" class="w-full bg-gray-700 border border-red-600 rounded-lg p-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-red-500 focus:outline-none transition-all duration-200" placeholder="e.g., Web Development, AI, History">
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <button id="generateBtn" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition-transform transform hover:scale-105 shadow-lg shadow-red-900/50 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">
+                Generate Welcome Message
+            </button>
+
+            <!-- Output Display -->
+            <div>
+                <h3 class="font-semibold text-gray-300 mb-2">Your Personalized Message:</h3>
+                <div id="output" class="w-full min-h-[80px] bg-gray-800 rounded-lg p-4 text-center flex items-center justify-center border border-red-700 overflow-hidden">
+                    <p class="text-lg italic text-gray-400">Your message will appear here...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="p-4 bg-gray-800 border-t border-red-800 text-center text-gray-500 text-sm">
+            Built with 🖤 and assistance from Gemini
+        </div>
+    </div>
+
+    <script>
+        // Get references to the HTML elements
+        const userNameInput = document.getElementById('userName');
+        const userTopicInput = document.getElementById('userTopic');
+        const generateBtn = document.getElementById('generateBtn');
+        const outputDiv = document.getElementById('output');
+
+        // Define the special name. IMPORTANT: Change this to your actual name!
+        const SPECIAL_NAME = "Sid"; 
+
+        /**
+         * Replicates the Python script's logic to create a personalized welcome message.
+         * @param {string} name - The user's name.
+         * @param {string} topic - The topic the user is learning about.
+         * @returns {string} The personalized welcome message.
+         */
+        function createWelcomeMessage(name, topic) {
+            // Trim whitespace from inputs for accurate comparison and display
+            const trimmedName = name.trim();
+            const trimmedTopic = topic.trim();
+
+            // Part 1: Determine the time-based greeting automatically
+            const currentHour = new Date().getHours(); // Get the current hour (0-23)
+            let timeOfDayGreeting = "";
+            if (currentHour < 12) {
+                timeOfDayGreeting = "Good morning";
+            } else if (currentHour >= 12 && currentHour < 18) {
+                timeOfDayGreeting = "Good afternoon";
+            } else {
+                timeOfDayGreeting = "Good evening";
+            }
+
+            // Part 4: Combine all conditions and return the personalized greeting
+            // Check for the special name (case-insensitive for robustness)
+            if (trimmedName.toLowerCase() === SPECIAL_NAME.toLowerCase()) {
+                // Special greeting for the specific name, including time of day
+                return `Hey ${trimmedName}! ${timeOfDayGreeting}! Welcome back!`;
+            } else {
+                // Regular greeting, including time of day and the user's topic
+                // Provide a default topic if the user leaves it blank
+                const displayTopic = trimmedTopic || "something fascinating";
+                return `${timeOfDayGreeting}, I'm ${trimmedName || "a new friend"}, and I'm learning about ${displayTopic}.`;
+            }
+        }
+
+        /**
+         * Handles the button click and input field 'Enter' key press events.
+         * Generates and displays the welcome message.
+         */
+        function handleGeneration() {
+            const name = userNameInput.value;
+            const topic = userTopicInput.value;
+            
+            // Clear previous message and show a "Generating..." indicator
+            outputDiv.innerHTML = '';
+            const p = document.createElement('p');
+            p.className = 'text-lg font-medium text-red-300 animate-pulse';
+            p.textContent = 'Generating...';
+            outputDiv.appendChild(p);
+            
+            // Simulate a brief loading time before displaying the final message
+            setTimeout(() => {
+                const welcomeText = createWelcomeMessage(name, topic);
+                p.textContent = welcomeText;
+                p.classList.remove('animate-pulse', 'text-red-300');
+                p.classList.add('text-white'); // Ensure the final text is white
+            }, 700); // 700ms loading time for a smoother feel
+        }
+
+        // Add event listeners to the button
+        generateBtn.addEventListener('click', handleGeneration);
+
+        // Allow pressing 'Enter' in the input fields to generate the message
+        userNameInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                handleGeneration();
+            }
+        });
+        userTopicInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                handleGeneration();
+            }
+        });
+
+        // Initialize with a default anonymous message on load
+        window.addEventListener('load', () => {
+            handleGeneration(); // Generate an initial message with default values
+        });
+
+    </script>
+</body>
+</html>
