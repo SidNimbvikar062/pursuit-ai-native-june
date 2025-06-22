@@ -1,0 +1,63 @@
+body {
+    width: 320px; /* Consistent width for the popup */
+    font-family: "Inter", sans-serif; /* Prefer Inter font */
+    padding: 10px;
+    background-color: #f7f7f7; /* Light gray background */
+  }
+  
+  /* Styles for input and select elements */
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+    border-radius: 0.375rem; /* Tailwind rounded-lg */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Tailwind shadow-sm */
+    font-size: 1rem;
+  }
+  
+  /* Styles for the button */
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2563eb; /* Tailwind blue-600 */
+    color: white;
+    border: none;
+    border-radius: 0.375rem; /* Tailwind rounded-lg */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #1d4ed8; /* Tailwind blue-700 */
+  }
+  
+  /* Styles for the output display area */
+  #output {
+    background: #e0f2f7; /* Light blue background */
+    padding: 15px;
+    border-radius: 0.5rem; /* Rounded corners */
+    border: 1px solid #a7d9ed; /* Blue border */
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    color: #0c4a6e; /* Darker blue text */
+    min-height: 50px; /* Ensure it has some height even if empty */
+    display: flex; /* Use flexbox to center content vertically */
+    align-items: center;
+    justify-content: center;
+    word-break: break-all; /* Prevents overflow for long numbers */
+  }
+  
+  /* Error message styling */
+  #errorMessage {
+    color: #dc2626; /* Tailwind red-600 */
+    font-size: 0.875rem; /* text-sm */
+    text-align: center;
+    margin-top: 5px;
+  }
+  

@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Length Unit Converter",
+  "version": "1.0",
+  "description": "A simple browser extension to convert common length units.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "6424.jpg",
+      "48": "6424.jpg",
+      "128": "6424.jpg"
+    }
+  },
+  "icons": {
+    "16": "6424.jpg",
+    "32": "6424.jpg",
+    "48": "6424.jpg",
+    "128": "6424.jpg"
+  }
+}
