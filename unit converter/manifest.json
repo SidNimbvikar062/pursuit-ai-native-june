@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Length Unit Converter",
-  "version": "1.0",
-  "description": "A simple browser extension to convert common length units.",
+  "name": "Universal Unit Converter",
+  "version": "1.2",
+  "description": "A comprehensive browser extension to convert units of length, mass, speed, acceleration, time, volume, area, pressure, and temperature.",
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

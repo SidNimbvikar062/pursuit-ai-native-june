@@ -1,8 +1,11 @@
 body {
-    width: 320px; /* Consistent width for the popup */
-    font-family: "Inter", sans-serif; /* Prefer Inter font */
+    width: 350px; /* Increased width for more content */
+    /* min-height: 500px; Removed or reduced as extra content is gone. */
+    font-family: "Inter", sans-serif;
     padding: 10px;
-    background-color: #f7f7f7; /* Light gray background */
+    background-color: #f7f7f7;
+    display: block;
+    overflow-y: auto; /* Keep scrolling enabled if content naturally overflows */
   }
   
   /* Styles for input and select elements */
@@ -11,9 +14,9 @@ body {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #d1d5db; /* Tailwind gray-300 */
-    border-radius: 0.375rem; /* Tailwind rounded-lg */
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Tailwind shadow-sm */
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     font-size: 1rem;
   }
   
@@ -21,10 +24,10 @@ body {
   button {
     width: 100%;
     padding: 10px;
-    background-color: #2563eb; /* Tailwind blue-600 */
+    background-color: #2563eb;
     color: white;
     border: none;
-    border-radius: 0.375rem; /* Tailwind rounded-lg */
+    border-radius: 0.375rem;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -32,32 +35,74 @@ body {
   }
   
   button:hover {
-    background-color: #1d4ed8; /* Tailwind blue-700 */
+    background-color: #1d4ed8;
   }
+  
+  /* Specific styling for the swap button */
+  #swapUnitsBtn {
+    width: 32px; /* Smaller width */
+    height: 32px; /* Smaller height */
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0;
+    background-color: #e5e7eb;
+    color: #4b5563;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    margin-top: 1.25rem; /* Keep existing margin to align with dropdowns */
+  }
+  
+  #swapUnitsBtn:hover {
+    background-color: #d1d5db;
+  }
+  
+  #swapUnitsBtn svg {
+    width: 1rem; /* Smaller SVG icon */
+    height: 1rem;
+  }
+  
   
   /* Styles for the output display area */
   #output {
-    background: #e0f2f7; /* Light blue background */
+    background: #e0f2f7;
     padding: 15px;
-    border-radius: 0.5rem; /* Rounded corners */
-    border: 1px solid #a7d9ed; /* Blue border */
+    border-radius: 0.5rem;
+    border: 1px solid #a7d9ed;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     margin-top: 15px;
-    color: #0c4a6e; /* Darker blue text */
-    min-height: 50px; /* Ensure it has some height even if empty */
-    display: flex; /* Use flexbox to center content vertically */
+    color: #0c4a6e;
+    min-height: 50px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    word-break: break-all; /* Prevents overflow for long numbers */
+    word-break: break-all;
   }
   
   /* Error message styling */
   #errorMessage {
-    color: #dc2626; /* Tailwind red-600 */
-    font-size: 0.875rem; /* text-sm */
+    color: #dc2626;
+    font-size: 0.875rem;
     text-align: center;
     margin-top: 5px;
   }
+  
+  /* Removed styles for the extra-content div */
+  /*
+  .extra-content {
+      height: 200px;
+      background-color: #f0fdf4;
+      border: 1px dashed #bbf7d0;
+      margin-top: 20px;
+      padding: 10px;
+      text-align: center;
+      color: #166534;
+      font-size: 0.9rem;
+      border-radius: 0.5rem;
+  }
+  */
   
