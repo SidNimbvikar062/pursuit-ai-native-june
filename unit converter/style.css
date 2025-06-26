@@ -1,108 +1,133 @@
+/* Apply box-sizing to all elements for consistent box model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
-    width: 350px; /* Increased width for more content */
-    /* min-height: 500px; Removed or reduced as extra content is gone. */
-    font-family: "Inter", sans-serif;
-    padding: 10px;
-    background-color: #f7f7f7;
-    display: block;
-    overflow-y: auto; /* Keep scrolling enabled if content naturally overflows */
-  }
-  
-  /* Styles for input and select elements */
-  input[type="number"],
-  select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #d1d5db;
-    border-radius: 0.375rem;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    font-size: 1rem;
-  }
-  
-  /* Styles for the button */
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 0.375rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out;
-  }
-  
-  button:hover {
-    background-color: #1d4ed8;
-  }
-  
-  /* Specific styling for the swap button */
-  #swapUnitsBtn {
-    width: 32px; /* Smaller width */
-    height: 32px; /* Smaller height */
-    min-width: 32px;
-    min-height: 32px;
-    padding: 0;
-    background-color: #e5e7eb;
-    color: #4b5563;
-    border-radius: 9999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    margin-top: 1.25rem; /* Keep existing margin to align with dropdowns */
-  }
-  
-  #swapUnitsBtn:hover {
-    background-color: #d1d5db;
-  }
-  
-  #swapUnitsBtn svg {
-    width: 1rem; /* Smaller SVG icon */
-    height: 1rem;
-  }
-  
-  
-  /* Styles for the output display area */
-  #output {
-    background: #e0f2f7;
-    padding: 15px;
-    border-radius: 0.5rem;
-    border: 1px solid #a7d9ed;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 15px;
-    color: #0c4a6e;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    word-break: break-all;
-  }
-  
-  /* Error message styling */
-  #errorMessage {
-    color: #dc2626;
-    font-size: 0.875rem;
-    text-align: center;
-    margin-top: 5px;
-  }
-  
-  /* Removed styles for the extra-content div */
-  /*
-  .extra-content {
-      height: 200px;
-      background-color: #f0fdf4;
-      border: 1px dashed #bbf7d0;
-      margin-top: 20px;
-      padding: 10px;
-      text-align: center;
-      color: #166534;
-      font-size: 0.9rem;
-      border-radius: 0.5rem;
-  }
-  */
-  
+  width: 400px; /* Increased width for a wider window */
+  height: 400px; /* Adjusted height to accommodate new element and avoid scrollbar */
+  font-family: "Inter", sans-serif;
+  padding: 0; /* Remove default body padding */
+  margin: 0 auto; /* Center the body itself if it's within a larger frame */
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* Default text color for body elements to white */
+  display: block;
+  overflow-y: hidden; /* Hide vertical scrollbar, ensuring content fits */
+  background-image: none; /* Explicitly remove any background images */
+}
+
+/* Styles for the main content container (inner white box) */
+.bg-white {
+    background-color: #ffffff; /* Ensure the inner container is white */
+    color: #000000; /* Ensure text inside this box is black for contrast */
+    padding: 16px; /* Consistent padding inside the white box (equivalent to Tailwind p-4) */
+    border-radius: 0.5rem; /* Match rounded-lg */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Tailwind shadow-lg */
+    width: calc(100% - 20px); /* Adjust width to account for body's overall 10px margin/padding if applied by browser; safer */
+    margin: 10px auto; /* Center the white box horizontally within the body, add top/bottom margin */
+}
+
+/* Styles for the main heading */
+.bg-white h1 {
+    color: #000000; /* Black for the main heading */
+    text-align: center; /* Center the H1 text */
+    margin-bottom: 0.75rem; /* mb-6 equivalent */
+    font-size: 1.8rem; /* Slightly reduced font size for H1 */
+}
+
+/* Styles for labels within the main container */
+.bg-white label {
+    display: block; /* Make label a block element so text-align works */
+    text-align: center; /* Center the label text */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #333333; /* Dark grey for labels inside the white box */
+    margin-bottom: 0.125rem; /* mb-1 equivalent */
+}
+
+/* Styles for input and select elements */
+input[type="number"],
+select {
+  width: 100%;
+  padding: 6px 8px; /* Reduced vertical padding */
+  margin-bottom: 8px; /* Reduced margin-bottom */
+  border: 1px solid #cccccc;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem; /* Slightly reduced font size for inputs */
+  background-color: #ffffff; /* White background for input fields */
+  color: #000000; /* Black text for readability */
+}
+
+/* Styles for the button */
+button {
+  width: 100%;
+  padding: 8px; /* Reduced padding */
+  background-color: #007bff; /* Brighter blue for primary action */
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.95rem; /* Slightly reduced font size */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker hover state for primary action */
+}
+
+/* Specific styling for the swap button */
+#swapUnitsBtn {
+  width: 30px; /* Slightly smaller */
+  height: 30px; /* Slightly smaller */
+  min-width: 30px;
+  min-height: 30px;
+  padding: 0;
+  background-color: #e0e0e0; /* Light grey for swap button */
+  color: #333333; /* Dark grey text/icon for swap button */
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  margin-top: 0; /* Remove top margin, rely on flexbox alignment */
+}
+
+#swapUnitsBtn:hover {
+  background-color: #c0c0c0; /* Darker hover state for swap button */
+}
+
+#swapUnitsBtn svg {
+  width: 0.9rem; /* Slightly smaller SVG icon */
+  height: 0.9rem;
+}
+
+
+/* Styles for the output display area */
+#output {
+  background-color: #ffffff; /* Pure white background for output */
+  background-image: none; /* Remove pattern */
+  background-repeat: initial; /* Reset background repeat */
+  padding: 12px; /* Reduced padding */
+  border-radius: 0.5rem;
+  border: 1px solid #cccccc; /* Simple grey border */
+  font-size: 1.4rem; /* Slightly reduced font size */
+  font-weight: bold;
+  text-align: center;
+  margin-top: 12px; /* Reduced margin-top */
+  color: #000000; /* Black text for output result */
+  min-height: 45px; /* Reduced min-height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-all;
+}
+
+/* Error message styling */
+#errorMessage {
+  color: #dc2626; /* Keep red for error messages */
+  font-size: 0.85rem; /* Slightly smaller */
+  text-align: center;
+  margin-top: 4px; /* Reduced margin-top */
+}
