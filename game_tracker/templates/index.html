@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Game Tracker!</h1>
+        <p>Your personal assistant for tracking your video game library.</p>
+        <p>
+            <a href="{{ url_for('register') }}" class="button">Register</a>
+            <a href="{{ url_for('login') }}" class="button">Login</a>
+        </p>
+    </div>
+</body>
+</html>

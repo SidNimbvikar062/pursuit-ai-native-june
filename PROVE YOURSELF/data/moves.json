@@ -1,0 +1,516 @@
+[
+{
+  "name": "Sword",
+  "accuracy": 95,
+  "damage_range": [1, 8],
+  "type": "physical",
+  "cost": 0,
+  "speed": 2
+},
+{
+  "name": "Club",
+  "accuracy": 70,
+  "damage_range": [1, 10],
+  "type": "physical",
+  "cost": 0,
+  "speed": 3
+},
+{
+  "name": "Punch",
+  "accuracy": 100,
+  "damage_range": [1, 2],
+  "type": "physical",
+  "cost": 0,
+  "speed": 1
+},
+{
+  "name": "Spark",
+  "accuracy": 85,
+  "damage_range": [1, 6],
+  "type": "magic",
+  "cost": 5,
+  "speed": 3
+},
+{
+  "name": "Knife",
+  "accuracy": 95,
+  "damage_range": [1, 4],
+  "type": "physical",
+  "cost": 0,
+  "speed": 2
+},
+{
+  "name": "Claws",
+  "accuracy": 95,
+  "damage_range": [1, 3],
+  "type": "physical",
+  "cost": 0,
+  "speed": 1
+},
+{
+  "name": "Ember",
+  "accuracy": 90,
+  "damage_range": [2, 4],
+  "type": "magic",
+  "cost": 2,
+  "speed": 2
+},
+{
+  "name": "Bite",
+  "accuracy": 100,
+  "damage_range": [2, 5],
+  "type": "physical",
+  "cost": 0,
+  "speed": 2
+},
+{
+  "name": "Scratch",
+  "accuracy": 95,
+  "damage_range": [1, 8],
+  "type": "physical",
+  "cost": 0,
+  "speed": 4
+},
+{
+  "name": "Acid Spit",
+  "accuracy": 85,
+  "damage_range": [1, 6],
+  "type": "magic",
+  "cost": 0,
+  "speed": 5
+},
+{
+  "name": "Corrosive Touch",
+  "accuracy": 80,
+  "damage_range": [1, 5],
+  "type": "magic",
+  "cost": 0,
+  "speed": 6
+},
+{
+  "name": "Lunge",
+  "accuracy": 90,
+  "damage_range": [2, 12],
+  "type": "physical",
+  "cost": 0,
+  "speed": 2
+},
+{
+  "name": "Bone Flail",
+  "accuracy": 75,
+  "damage_range": [1, 12],
+  "type": "physical",
+  "cost": 0,
+  "speed": 5
+},
+{
+  "name": "Spear",
+  "accuracy": 85,
+  "damage_range": [2, 10],
+  "type": "physical",
+  "cost": 0,
+  "speed": 3
+},
+{
+  "name": "Rotting Touch",
+  "accuracy": 80,
+  "damage_range": [2, 16],
+  "type": "magic",
+  "cost": 0,
+  "speed": 4
+},
+{
+  "name": "Web",
+  "accuracy": 85,
+  "damage_range": [0, 0],
+  "type": "magic",
+  "cost": 0,
+  "speed": 8,
+  "status_effect": "speed_debuff",
+  "status_magnitude": 2
+},
+{
+  "name": "Staff Bash",
+  "accuracy": 90,
+  "damage_range": [2, 5],
+  "type": "physical",
+  "cost": 0,
+  "speed": 3
+},
+{
+  "name": "Poison Dart",
+  "accuracy": 95,
+  "damage_range": [2, 12],
+  "type": "magic",
+  "cost": 5,
+  "speed": 6
+},
+{
+  "name": "Corrupting Aura",
+  "accuracy": 85,
+  "damage_range": [5, 16],
+  "type": "magic",
+  "cost": 8,
+  "speed": 8
+},
+{
+  "name": "Slash",
+  "accuracy": 95,
+  "damage_range": [2, 10],
+  "type": "physical",
+  "cost": 0,
+  "speed": 4
+},
+{
+  "name": "Infect",
+  "accuracy": 80,
+  "damage_range": [0, 0],
+  "type": "magic",
+  "cost": 0,
+  "speed": 5,
+  "status_effect": "speed_debuff",
+  "status_magnitude": 4
+},
+{
+  "name": "Shadow Strike",
+  "accuracy": 90,
+  "damage_range": [2, 10],
+  "type": "magic",
+  "cost": 0,
+  "speed": 1,
+  "status_effect": "speed_debuff",
+  "status_magnitude": 3
+},
+{
+  "name": "Regenerate",
+  "accuracy": 100,
+  "damage_range": [0, 0],
+  "type": "heal",
+  "cost": 0,
+  "speed": 7,
+  "heal_range": [3, 12],
+  "target": "self"
+},
+{
+  "name": "Enfeeble",
+  "accuracy": 95,
+  "damage_range": [-9, 0],
+  "type": "magic",
+  "cost": 8,
+  "speed": 5,
+  "status_effect_data": {
+      "name": "Enfeebled",
+      "duration": 2,
+      "effects": {
+          "atk_mult": 0.5,
+          "mag_mult": 0.5
+      }
+  }
+},
+{
+  "name": "Focus",
+  "accuracy": 100,
+  "damage_range": [0, 0],
+  "type": "status",
+  "cost": 10,
+  "speed": 6,
+  "status_effect_data": {
+      "name": "Focused",
+      "duration": 3,
+      "effects": {
+          "atk_mult": 1.5,
+          "mag_mult": 1.5
+      }
+    },
+  "target": "self"
+},
+{
+  "name": "Slam",
+  "accuracy": 90,
+  "damage_range": [10, 18], 
+  "type": "physical",
+  "cost": 0,
+  "speed": 40, 
+  "target": "enemy"
+},
+{
+  "name": "Boulder Toss",
+  "accuracy": 85,
+  "damage_range": [12, 22], 
+  "type": "physical",
+  "cost": 0,
+  "speed": 50,
+  "target": "enemy"
+},
+{
+  "name": "Endure",
+  "accuracy": 100,
+  "damage_range": [0, 0],
+  "type": "status",
+  "cost": 12,    
+  "speed": 1,     
+  "target": "self",
+  "description": "Hardens skin, greatly increasing DEF and RES.",
+  "status_effect_data": {
+      "name": "Enduring Skin",
+      "effect_type": "buff",
+      "stat_modifier": {"def": 25, "res": 20}, 
+      "duration": 3,                           
+      "description": "Defense and Resistance are greatly increased."
+  }
+},
+{
+  "name": "Stone Shard",
+  "accuracy": 95,
+  "damage_range": [3, 15],  
+  "type": "magic",
+  "cost": 12,
+  "speed": 8,              
+  "target": "enemy"
+},
+{
+  "name": "Curse",
+  "accuracy": 80,          
+  "damage_range": [0, 0],
+  "type": "status",
+  "cost": 10,              
+  "speed": 10,             
+  "target": "enemy",
+  "status_effect_data": {
+      "name": "Cursed",
+      "effect_type": "debuff",
+      "stat_modifier": {"atk": -4, "mag": -4, "def": -4, "res": -4}, 
+      "duration": 2,                         
+      "description": "All stats are reduced."
+  }
+},
+{
+  "name": "Shriek",
+  "accuracy": 90,
+  "damage_range": [10, 18], 
+  "type": "magic",
+  "cost": 10,               
+  "speed": 3,              
+  "target": "enemy",
+  "description": "Unleashes a deafening, magical scream."
+},
+{
+  "name": "Club Bash",
+  "accuracy": 75,
+  "damage_range": [11, 21], 
+  "type": "physical",
+  "cost": 0,
+  "speed": 6,              
+  "target": "enemy",
+  "description": "Swings a massive club for heavy damage."
+},
+{
+    "name": "Ground Pound",
+    "accuracy": 65,           
+    "damage_range": [8, 16], 
+    "type": "physical",
+    "cost": 0,
+    "speed": 6,           
+    "target": "enemy",
+    "description": "Slams the ground, potentially slowing the enemy.",
+    "status_effect_data": {
+        "name": "Slowed",
+        "effect_type": "debuff",
+        "stat_modifier": {"speed": 10}, 
+        "duration": 2,                 
+        "description": "Speed is greatly reduced."
+    }
+},
+{
+  "name": "Fireball",
+  "accuracy": 90,
+  "damage_range": [15, 25], 
+  "type": "magic",
+  "cost": 8,
+  "speed": 3,           
+  "target": "enemy",
+  "description": "Hurls a searing ball of fire."
+},
+{
+  "name": "Ignite",
+  "accuracy": 85,           
+  "damage_range": [0, 0],  
+  "type": "status",        
+  "cost": 10,
+  "speed": 2,             
+  "target": "enemy",
+  "description": "Ignites the enemy, causing burning damage over time.",
+  "status_effect_data": {
+      "name": "Burning",
+      "effect_type": "dot",     
+      "damage_per_turn": [1, 10], 
+      "duration": 3,           
+      "description": "Takes burning damage each turn."
+  }
+},
+{
+  "name": "Chill Touch",
+  "accuracy": 90,
+  "damage_range": [5, 10],  
+  "type": "physical",
+  "cost": 0,
+  "speed": 4,             
+  "target": "enemy",
+  "description": "Chills the enemy with an icy touch, slowing them.",
+  "status_effect_data": {
+      "name": "Chilled",
+      "effect_type": "debuff",
+      "stat_modifier": {"speed": 10}, 
+      "duration": 2,
+      "description": "Speed is reduced due to chilling."
+  }
+},
+{
+  "name": "Frostbite",
+  "accuracy": 85,
+  "damage_range": [0, 0],
+  "type": "status",       
+  "cost": 8,
+  "speed": 10,           
+  "target": "enemy",
+  "description": "Inflicts frostbite, causing chilling damage over time.",
+  "status_effect_data": {
+      "name": "Frostbitten",
+      "effect_type": "dot",    
+      "damage_per_turn": [1, 6], 
+      "duration": 2,
+      "description": "Takes chilling damage each turn."
+  }
+},
+{
+  "name": "Ice Barrier",
+  "accuracy": 100,
+  "damage_range": [0, 0],
+  "type": "status",
+  "cost": 12,            
+  "speed": 2,        
+  "target": "self",
+  "description": "Forms an ice barrier, greatly increasing defenses.",
+  "status_effect_data": {
+      "name": "Ice Bound",
+      "effect_type": "buff",
+      "stat_modifier": {"def": 10, "res": 10},
+      "duration": 2,
+      "description": "Defenses are greatly increased by ice armor."
+  }
+},
+{
+  "name": "Axe Swing",
+  "accuracy": 70,
+  "type": "physical",
+  "cost": 0,
+  "damage_range": [12, 18],
+  "speed": 3,
+  "description": "A powerful swing with a large axe."
+},
+{
+  "name": "Stomp",
+  "accuracy": 85,
+  "type": "physical",
+  "cost": 5,
+  "damage_range": [8, 12],
+  "speed": 5,
+  "status_effect": "speed_debuff",
+  "status_magnitude": 3,
+  "description": "Stomps the ground, dealing damage and slightly reducing enemy defense.",
+  "status_effect_data": {
+    "name": "Defense Down",
+    "effect_type": "debuff",
+    "duration": 2,
+    "stat_modifier": {"def": -5, "res": -5}
+  }
+},
+{
+  "name": "Goring Rush",
+  "accuracy": 100,
+  "type": "status",
+  "target": "self",
+  "cost": 10,
+  "speed": 2,
+  "damage_range": [0,0],
+  "description": "The Minotaur prepares for a mighty charge, increasing its attack for the next turn.",
+  "status_effect_data": {
+    "name": "Goring Rush Buff",
+    "effect_type": "buff",
+    "duration": 2,
+    "stat_modifier": {"atk": 8}
+  }
+},
+{
+  "name": "Darkfire Spark",
+  "accuracy": 65,
+  "type": "magic",
+  "cost": 15,
+  "damage_range": [4, 32],
+  "status_effect_data": {
+    "name": "Defense Corrosion",
+    "effect_type": "debuff",
+    "duration": 2,
+    "stat_modifier": {"def": -7, "res": -7}
+  }
+},
+{
+  "name": "Profane Regeneration",
+  "accuracy": 100,
+  "damage_range": [0, 0],
+  "type": "heal",
+  "cost": 0,
+  "speed": 7,
+  "heal_range": [8, 48],
+  "target": "self",
+  "status_effect_data": {
+    "name": "Profane Regeneration",
+    "effect_type": "buff",
+    "duration": 2,
+    "stat_modifier": {"def": -8, "res": -12}
+  }
+},
+{
+  "name": "Petrify",
+  "type": "magic",
+  "cost": 25,
+  "accuracy": 50,
+  "damage_range": [5, 10],
+  "description": "Gazes upon the target, turning them to stone; reducing their offense but hardening their defenses.",
+  "status_effect": "speed_debuff",
+  "status_magnitude": 6,
+  "status_effect_data": {
+    "name": "Petrified",
+    "effect_type": "debuff",
+    "duration": 3,
+    "stat_modifier": {"atk": -5, "mag": -5, "def": 5, "res": 5}
+  }
+},
+{
+  "name": "Tail Whip",
+  "accuracy": 80,
+  "type": "physical",
+  "cost": 0,
+  "speed": 1,
+  "damage_range": [8, 12],
+  "description": "A swift lash of the tail."
+},
+{
+  "name": "Venomous Bite",
+  "accuracy": 85,           
+  "damage_range": [10, 15],  
+  "type": "physical",        
+  "cost": 10,
+  "speed": 2,             
+  "target": "enemy",
+  "description": "A quick, venomous bite that poisons the target.",
+  "status_effect_data": {
+      "name": "Poisoned",
+      "effect_type": "dot",     
+      "damage_per_turn": [5, 10], 
+      "duration": 3,           
+      "description": "Takes burning damage each turn."
+  }
+}
+
+]

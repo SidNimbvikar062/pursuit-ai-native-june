@@ -1,0 +1,223 @@
+[
+    {
+        "name": "Goblin",
+        "hp": 10,
+        "atk": 8,
+        "def": 5,
+        "mag": 0,
+        "res": 6,
+        "image_path": "images/goblin.png",
+        "moves": ["Punch", "Knife"]
+      },
+    {
+      "name": "Orc",
+      "hp": 25,
+      "atk": 9,
+      "def": 7,
+      "mag": 2,
+      "res": 6,
+      "image_path": "images/orc.png",
+      "moves": ["Club", "Punch"]
+    },
+    {
+        "name": "Kobold",
+        "hp": 12,
+        "atk": 7,
+        "def": 4,
+        "mag": 6,
+        "res": 3,
+        "image_path": "images/kobold.png",
+        "moves": ["Claws", "Ember"]
+      },
+      {
+        "name": "Giant Rat",
+        "hp": 18,
+        "atk": 6,
+        "def": 8,
+        "mag": 0,
+        "res": 7,
+        "image_path": "images/giant_rat.png",
+        "moves": ["Bite", "Scratch"]
+      },
+      {
+        "name": "Slime",
+        "hp": 20,
+        "atk": 1,
+        "def": 12,
+        "mag": 9,
+        "res": 5,
+        "image_path": "images/slime.png",
+        "moves": ["Acid Spit", "Corrosive Touch"]
+      },
+      {
+        "name": "Dire Wolf",
+        "hp": 35,
+        "atk": 12,
+        "def": 8,
+        "mag": 1,
+        "res": 5,
+        "image_path": "images/dire_wolf.png",
+        "moves": ["Lunge", "Scratch"]
+    },
+    {
+      "name": "Skeleton",
+      "hp": 25,
+      "atk": 10,
+      "def": 6,
+      "mag": 2,
+      "res": 5,
+      "image_path": "images/skeleton.png",
+      "moves": ["Bone Flail", "Spear"]
+    },
+    {
+      "name": "Zombie",
+      "hp": 40,
+      "atk": 11,
+      "def": 10,
+      "mag": 6,
+      "res": 10,
+      "image_path": "images/zombie.png",
+      "moves": ["Rotting Touch", "Bite", "Lunge"]
+    },
+    {
+      "name": "Giant Spider",
+      "hp": 35,
+      "atk": 12,
+      "def": 10,
+      "mag": 7,
+      "res": 7,
+      "image_path": "images/giant_spider.png",
+      "moves": ["Web", "Bite", "Lunge", "Acid Spit"]
+    },
+    {
+      "name": "Goblin Shaman",
+      "image_path": "images/goblin_shaman.png",
+      "hp": 35,
+      "atk": 6,
+      "def": 8,
+      "mag": 17,
+      "res": 14,
+      "moves": ["Staff Bash", "Poison Dart", "Corrupting Aura", "Enfeeble"]
+    },
+    {
+      "name": "Gnoll",
+        "hp": 48,
+        "atk": 17,
+        "def": 12,
+        "mag": 3,
+        "res": 8,
+        "mp": 0,
+        "image_path": "images/gnoll.png",
+        "moves": ["Slash", "Bite", "Lunge", "Infect"]
+    },
+    {
+      "name": "Bandit",
+        "hp": 40,
+        "atk": 13,
+        "def": 7,
+        "mag": 9,
+        "res": 6,
+        "mp": 50,
+        "image_path": "images/bandit.png",
+        "moves": ["Slash", "Shadow Strike", "Poison Dart"]
+    },
+    {
+      "name": "Troll",
+      "hp": 60,
+      "atk": 19,
+      "def": 15,
+      "mag": 3,
+      "res": 2,
+      "mp": 0,
+      "image_path": "images/troll.png",
+      "moves": ["Club", "Lunge", "Regenerate"]
+    },
+    {
+      "name": "Golem",
+      "hp": 30,  
+      "atk": 8,  
+      "def": 25, 
+      "mag": 3,  
+      "res": 20, 
+      "mp": 24,  
+      "moves": ["Slam", "Boulder Toss", "Endure"], 
+      "image_path": "images/golem.png" 
+    },
+    {
+      "name": "Gargoyle",
+      "hp": 45,  
+      "atk": 6,  
+      "def": 5,  
+      "mag": 14, 
+      "res": 5,  
+      "mp": 50,  
+      "moves": ["Spark", "Stone Shard", "Curse"], 
+      "image_path": "images/gargoyle.png" 
+    },
+    {
+      "name": "Banshee",
+      "hp": 28,  
+      "atk": 2,  
+      "def": 45, 
+      "mag": 16, 
+      "res": 10, 
+      "mp": 70,  
+      "moves": ["Enfeeble", "Curse", "Shriek"], 
+      "image_path": "images/banshee.png" 
+    },
+    {
+      "name": "Ogre",
+      "hp": 60, 
+      "atk": 20, 
+      "def": 15, 
+      "mag": 6,  
+      "res": 16, 
+      "mp": 0,   
+      "moves": ["Club Bash", "Ground Pound"], 
+      "image_path": "images/ogre.png"
+    },
+    {
+      "name": "Minotaur",
+      "hp": 70,
+      "atk": 15,
+      "def": 12,
+      "mag": 0,
+      "res": 8,
+      "mp": 30,
+      "image_path": "images/minotaur.png",
+      "moves": ["Axe Swing", "Goring Rush", "Stomp"]
+    },
+    {
+      "name": "Dark Mage",
+      "hp": 45,
+      "atk": 9,
+      "def": 15,
+      "mag": 26,
+      "res": 19,
+      "mp": 30,
+      "image_path": "images/dark_mage.png",
+      "moves": ["Corrupting Aura", "Infect", "Darkfire Spark", "Profane Regeneration"]
+    },
+    {
+      "name": "Gorgon",
+      "hp": 55,
+      "atk": 15,
+      "def": 15,
+      "mag": 26,
+      "res": 19,
+      "mp": 30,
+      "image_path": "images/gorgon.png",
+      "moves": ["Claws", "Infect", "Petrify", "Acid Spit"] 
+    },
+    {
+      "name": "Basilisk",
+      "hp": 50,
+      "atk": 16,
+      "def": 20,
+      "mag": 10,
+      "res": 20,
+      "mp": 50,
+      "image_path": "images/basilisk.png",
+      "moves": ["Venomous Bite", "Tail Whip", "Lunge", "Petrify"]
+    }
+  ]

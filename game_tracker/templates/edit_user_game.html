@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit {{ game.Title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <p>Welcome, {{ session['username'] }}!</p>
+        <a href="{{ url_for('my_library') }}">My Library</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <div class="container">
+        <h1>Edit: {{ game.Title }}</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for category, message in messages %}
+                        <li class="flash {{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form method="post">
+            <label for="status">Status:</label><br>
+            <select id="status" name="status" required>
+                <option value="Owned - Backlog" {% if game.Status == 'Owned - Backlog' %}selected{% endif %}>Owned - Backlog</option>
+                <option value="Playing" {% if game.Status == 'Playing' %}selected{% endif %}>Playing</option>
+                <option value="Completed" {% if game.Status == 'Completed' %}selected{% endif %}>Completed</option>
+                <option value="Dropped" {% if game.Status == 'Dropped' %}selected{% endif %}>Dropped</option>
+            </select><br><br>
+
+            <label for="rating">Rating (1-10, Optional):</label><br>
+            <input type="number" id="rating" name="rating" min="1" max="10" value="{{ game.Rating if game.Rating else '' }}"><br><br>
+
+            <label for="playtime_hours">Playtime (Hours) (Optional):</label><br>
+            <input type="number" id="playtime_hours" name="playtime_hours" min="0" value="{{ game.PlaytimeHours if game.PlaytimeHours else '' }}"><br><br>
+
+            <label for="notes">Notes (Optional):</label><br>
+            <textarea id="notes" name="notes" rows="4">{{ game.Notes if game.Notes else '' }}</textarea><br><br>
+
+            <label for="date_added">Date Added:</label><br>
+            <input type="text" id="date_added" name="date_added" value="{{ game.DateAdded if game.DateAdded else 'N/A' }}" readonly><br><br>
+
+            <label for="last_played">Last Played:</label><br>
+            <input type="text" id="last_played" name="last_played" value="{{ game.LastPlayed if game.LastPlayed else 'N/A' }}" readonly><br><br>
+
+            <input type="submit" value="Update Game">
+        </form>
+        <p><a href="{{ url_for('my_library') }}">Back to My Library</a></p>
+    </div>
+</body>
+</html>

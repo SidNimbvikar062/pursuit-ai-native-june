@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Game Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <p>Welcome, {{ username }}!</p>
+        <div class="my-library-header-links">
+            <a href="{{ url_for('add_game') }}">Add New Game</a>
+            <a href="{{ url_for('import_steam') }}">Import Steam Games</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>{{ username }}'s Game Library</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for category, message in messages %}
+                        <li class="flash {{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        {% if not recently_played_games and not unplayed_games %}
+            <p>Your library is empty. Start by adding some games or <a href="{{ url_for('import_steam') }}">import from Steam</a>!</p>
+        {% else %}
+            {% if recently_played_games %}
+            <h2>Recently Played Games</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Developer</th>
+                        <th>Platform</th>
+                        <th>Genre</th>
+                        <th>Status</th>
+                        <th>Rating</th>
+                        <th>Playtime (Hours)</th>
+                        <th>Notes</th>
+                        <th>Date Added</th>
+                        <th>Last Played</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for game in recently_played_games %}
+                    <tr>
+                        <td>{{ game.Title }}</td>
+                        <td>{{ game.Developer }}</td>
+                        <td>{{ game.Platform }}</td>
+                        <td>{{ game.Genre if game.Genre else 'N/A' }}</td>
+                        <td>{{ game.Status }}</td>
+                        <td>{{ game.Rating if game.Rating else 'N/A' }}</td>
+                        <td>{{ game.PlaytimeHours if game.PlaytimeHours else 'N/A' }}</td>
+                        <td>{{ game.Notes if game.Notes else 'N/A' }}</td>
+                        <td>{{ game.DateAdded if game.DateAdded else 'N/A' }}</td>
+                        <td>{{ game.LastPlayed if game.LastPlayed else 'N/A' }}</td>
+                        <td class="action-buttons">
+                            <a href="{{ url_for('edit_user_game', user_game_id=game.UserGameID) }}">Edit</a>
+                            <form method="post" action="{{ url_for('delete_user_game', user_game_id=game.UserGameID) }}" onsubmit="return confirm('Are you sure you want to delete {{ game.Title }} from your library?');">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+
+            {% if unplayed_games %}
+            <h2>Unplayed / Backlog Games</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Developer</th>
+                        <th>Platform</th>
+                        <th>Genre</th>
+                        <th>Status</th>
+                        <th>Rating</th>
+                        <th>Playtime (Hours)</th>
+                        <th>Notes</th>
+                        <th>Date Added</th>
+                        <th>Last Played</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for game in unplayed_games %}
+                    <tr>
+                        <td>{{ game.Title }}</td>
+                        <td>{{ game.Developer }}</td>
+                        <td>{{ game.Platform }}</td>
+                        <td>{{ game.Genre if game.Genre else 'N/A' }}</td>
+                        <td>{{ game.Status }}</td>
+                        <td>{{ game.Rating if game.Rating else 'N/A' }}</td>
+                        <td>{{ game.PlaytimeHours if game.PlaytimeHours else 'N/A' }}</td>
+                        <td>{{ game.Notes if game.Notes else 'N/A' }}</td>
+                        <td>{{ game.DateAdded if game.DateAdded else 'N/A' }}</td>
+                        <td>{{ game.LastPlayed if game.LastPlayed else 'N/A' }}</td>
+                        <td class="action-buttons">
+                            <a href="{{ url_for('edit_user_game', user_game_id=game.UserGameID) }}">Edit</a>
+                            <form method="post" action="{{ url_for('delete_user_game', user_game_id=game.UserGameID) }}" onsubmit="return confirm('Are you sure you want to delete {{ game.Title }} from your library?');">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+os.environ['GEMINI_API_KEY'] = "AIzaSyBOzuqTZYT-cMFSc4jW9XfAZiKLizJPrKQ"

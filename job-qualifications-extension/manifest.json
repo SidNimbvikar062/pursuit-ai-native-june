@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "JobQualify Extractor",
+  "version": "1.0",
+  "description": "Extracts required qualifications from job descriptions using Gemini AI.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "6424.jpg",
+      "48": "6424.jpg",
+      "128": "6424.jpg"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/"
+  ]
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <p>Welcome, {{ session['username'] }}!</p>
+        <a href="{{ url_for('my_library') }}">My Library</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <div class="container">
+        <h1>Add a New Game</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for category, message in messages %}
+                        <li class="flash {{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form method="post">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" required><br><br>
+
+            <label for="developer">Developer:</label><br>
+            <input type="text" id="developer" name="developer" required><br><br>
+
+            <label for="platform">Platform:</label><br>
+            <input type="text" id="platform" name="platform" required><br><br>
+
+            <label for="genre">Genre (Optional):</label><br>
+            <input type="text" id="genre" name="genre"><br><br>
+
+            <label for="release_year">Release Year (Optional):</label><br>
+            <input type="number" id="release_year" name="release_year" min="1900" max="{{ now.year }}"><br><br>
+
+            <label for="playtime_estimate">Playtime Estimate (Hours) (Optional):</label><br>
+            <input type="number" id="playtime_estimate" name="playtime_estimate" min="0"><br><br>
+
+            <label for="steam_appid">Steam App ID (Optional):</label><br>
+            <input type="text" id="steam_appid" name="steam_appid" placeholder="e.g., 4000"><br><br>
+
+            <label for="description">Description (Optional):</label><br>
+            <textarea id="description" name="description" rows="4"></textarea><br><br>
+
+            <input type="submit" value="Add Game">
+        </form>
+    </div>
+</body>
+</html>
